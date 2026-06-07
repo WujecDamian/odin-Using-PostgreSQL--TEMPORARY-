@@ -8,6 +8,7 @@ app.set("views", path.join(__dirname, "views"));
 
 //routes
 app.get("/", (req, res) => {
+  res.render("home");
   console.log("usernames will be logged here - wip");
 });
 app.get("/new", (req, res) => {
