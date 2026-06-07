@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/WujecDamian/odin-Using-PostgreSQL--TEMPORARY-/issues"
   },
-  "homepage": "https://github.com/WujecDamian/odin-Using-PostgreSQL--TEMPORARY-#readme"
+  "homepage": "https://github.com/WujecDamian/odin-Using-PostgreSQL--TEMPORARY-#readme",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  }
 }
