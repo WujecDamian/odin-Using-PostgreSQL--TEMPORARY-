@@ -6,17 +6,13 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+//imports (routes)
+const homeRoutes = require("./routes/homeRoutes");
+const newRoutes = require("./routes/newRoutes");
+
 //routes
-app.get("/", (req, res) => {
-  res.render("home");
-  console.log("usernames will be logged here - wip");
-});
-app.get("/new", (req, res) => {
-  res.render("new");
-});
-app.post("/new", (req, res) => {
-  console.log("username to be saved: ", req.body.username);
-});
+app.get("/", homeRoutes);
+app.get("/new", newRoutes);
 
 //listen
 app.listen(3000, () => {
