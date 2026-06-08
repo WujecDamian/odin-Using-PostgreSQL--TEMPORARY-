@@ -5,14 +5,16 @@ const app = express();
 //ejs
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //imports (routes)
 const homeRoutes = require("./routes/homeRoutes");
 const newRoutes = require("./routes/newRoutes");
 
 //routes
-app.get("/", homeRoutes);
-app.get("/new", newRoutes);
+app.use("/", homeRoutes);
+app.use("/new", newRoutes);
 
 //listen
 app.listen(3000, () => {
