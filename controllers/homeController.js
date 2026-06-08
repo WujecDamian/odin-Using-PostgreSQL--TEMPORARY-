@@ -1,5 +1,9 @@
-const renderHome = (req, res) => {
-  res.render("home");
+const db = require("../db/queries");
+
+const renderHome = async (req, res) => {
+  const usernames = await db.getAllUsernames();
+  console.log("Usernames :", usernames);
+  res.send("Usernames" + usernames.map((user) => user.username).join(", "));
 };
 
 module.exports = { renderHome };
