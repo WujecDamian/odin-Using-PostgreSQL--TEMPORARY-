@@ -2,12 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 // middleware that is specific to this router
+const newController = require("../controllers/newController");
 
 // define the home page route
-router.get("/", (req, res) => {
-  res.render("new");
-});
-router.post("/", (req, res) => {
-  console.log("username to be saved: ", req.body.username);
-});
+router.get("/", newController.renderNew);
+router.post("/", newController.postNew);
 module.exports = router;
