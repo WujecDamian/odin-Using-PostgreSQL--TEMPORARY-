@@ -17,8 +17,15 @@ async function searchUser(searchQuery) {
   return result.rows;
 }
 
+async function deleteUsers() {
+  await pool.query(`
+    TRUNCATE TABLE usernames
+    `);
+}
+
 module.exports = {
   getAllUsernames,
   insertUsername,
   searchUser,
+  deleteUsers,
 };

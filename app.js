@@ -13,11 +13,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const homeRoutes = require("./routes/homeRoutes");
 const newRoutes = require("./routes/newRoutes");
 const searchRoutes = require("./routes/searchRoutes");
+const deleteRoutes = require("./routes/deleteRoutes");
 
 //routes
 app.use("/", homeRoutes);
 app.use("/new", newRoutes);
 app.use("/search", searchRoutes);
+app.use("/delete", deleteRoutes);
 
 //listen
 app.listen(3000, () => {
