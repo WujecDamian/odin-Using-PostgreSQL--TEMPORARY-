@@ -12,10 +12,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //imports (routes)
 const homeRoutes = require("./routes/homeRoutes");
 const newRoutes = require("./routes/newRoutes");
+const searchRoutes = require("./routes/searchRoutes");
 
 //routes
 app.use("/", homeRoutes);
 app.use("/new", newRoutes);
+app.use("/search", searchRoutes);
 
 //listen
 app.listen(3000, () => {
